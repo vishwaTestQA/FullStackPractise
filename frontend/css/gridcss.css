@@ -1,0 +1,29 @@
+.main{
+    min-height: 100vh;
+    grid-template-areas: "hr main nav"   
+}
+
+.container{
+    grid-area: main;
+    display: grid;
+    background-color: antiquewhite;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: auto;
+    min-height: 100vh;
+    gap: 1em;
+
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+
+
+    /* place-content: center; */
+}
+
+.card{
+    border: solid;
+    width: 100px;
+    height: 100px;
+    /* text-align: center; */
+}

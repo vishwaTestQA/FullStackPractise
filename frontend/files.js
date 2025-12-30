@@ -1,6 +1,8 @@
 // import axios from 'axios'
 // import axios from "https://cdn.jsdelivr.net/npm/axios@1.6.8/dist/axios.esm.browser.min.js";
 
+import { createElement } from "react";
+
 const head = document.querySelector('h3')
 const res  = head.innerText
 console.log(res);
@@ -93,6 +95,35 @@ allUserBtn.addEventListener('click', async ()=>{
 
 
 
+function throttleFns(fn, delay){
+  let timer;
+  let last = 0  //19000     //last
+  let date = Date.now()    //current
+  let delayRemaining = delay
+
+  return (...args)=>{
+    if(date - last >  delayRemaining){  //19000>1000   //200>1000? no 
+      fn(...args)
+      clearTimeout(timer)
+      last = date        // 19000
+      date = Date.now()  //  19200
+      return
+    }
+    clearInterval(timer)
+    // last = date;         //19200   //19400
+    delayRemaining = delay - ( Date.now() - date);    //1000 - 19400 - 19200
+    timer=setTimeout(()=> {
+       fn(...args)
+       date = Date.now()
+       last = 0
+      }, delayRemaining)
+  }
+}
+
+const inpTT = document.querySelector(".inp-tt")
+inpTT.addEventListener("change", (e) =>{
+    throttleFns(e.target.event)
+})
 
 
 

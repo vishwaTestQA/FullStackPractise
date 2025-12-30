@@ -4,6 +4,9 @@ import cors from 'cors'
 import userRoute from './routes.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import rateLimiter from './utils/rateLimiter.js';
+
+import http from 'http'
 
 // const http = require('http')
 // const server = http.createServer((req, res) => {
@@ -37,8 +40,8 @@ app.use(cookieParser())
 //   console.log(req.body.name)   //untill we log req.body the cors issue wont come but when accessing prop from body it comes
 // })
 
-
-app.use('/user', userRoute)
+const limiter = rateLimiter({winMax:10000, limit:5})
+app.use('/user', limiter,userRoute)
 
 
 const filename = fileURLToPath(import.meta.url)
