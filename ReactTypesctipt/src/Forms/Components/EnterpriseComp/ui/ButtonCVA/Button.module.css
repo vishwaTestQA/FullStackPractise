@@ -1,0 +1,17 @@
+.base{
+    /* padding: 10px 20px;    by default a button has padding of 2px height and 6px width */
+    padding: clamp(0.6rem, 1vw, 1.2rem);
+    border-radius: 4px;    
+    cursor: pointer;
+    border:none;
+    font-size: clamp(0.875rem, 1vw, 1.125rem);   /* standard size for a button text 14px to 18px */
+}
+
+.primary{background-color: blue; color:white}
+.secondary{background-color: gray; color: white}
+.outline{background-color: red;}
+
+.small {font-size: clamp(0.7rem, 0.9vw, 1.1rem); margin: 4px}
+.large {font-size: clamp(1rem, 1.5vw, 1.2rem); margin: 12px}
+
+

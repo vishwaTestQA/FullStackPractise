@@ -251,3 +251,26 @@ let resObj= [...data].sort((a,b) => {
 })
 
 console.log(resObj)
+
+
+//missing number in an array
+const missingNum = [1,2,4,5,7];
+
+let j = 1;
+
+for(let i = 0; i<missingNum.length; i++){
+    if(missingNum[i] !== j){
+        console.log('missing num', j)
+        i--;
+    }
+     j++;
+}
+
+ 
+// const n = 7;
+
+// const total = n*((n+1)/2)
+
+// const sum = missingNum.reduce((acc, v) => acc+v, 0)
+
+// console.log(total - sum)
