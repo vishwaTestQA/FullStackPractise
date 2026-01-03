@@ -1,0 +1,101 @@
+:root{
+    --input-radius: 4px;
+    --input-border: grey;
+    --input-border-focus: black;
+    /* --input-border-focus: black; */
+    --input--border-error: red;
+    --input--border-success: green;
+
+     --text-primary: #111827;
+     --text-muted: #6b7280;
+
+       /* spacing scale */
+       --space-1: 4px;
+       --space-2: 8px;
+       --space-3: 12px;
+} 
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.input-label{
+    font-weight: 500;
+    color: var(--text-primary);
+
+    font-size: clamp(0.7rem, 0.9vw, 0.8rem)
+}
+
+/* Base input */
+.input{
+    width: 30%;
+    border-radius: var(--input-radius);
+    border: 1px solid var(--input-border);
+    outline: none;
+    font-family: inherit;
+    color: var(--text-primary);
+    padding: 2px 6px;
+}
+
+.input--default:focus{
+  border-color: var(--input-border-focus);
+  box-shadow: 0 0 0 1px var(--input-border-focus);
+}
+
+.input:disabled {
+  background-color: #f9fafb;
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.input-error:focus{
+    font-size: clamp(0.7rem, 0.8vw, 0.8rem);
+    border-color: var(--input--border-error);
+}
+
+.input-success{
+    border-color: var(--input--border-success);
+}
+
+
+/* -----------------------------
+   Sizes (density control)
+------------------------------*/
+
+.input--sm {
+  min-height: 32px;
+}
+
+.input--md {
+  min-height: 40px;
+}
+
+.input--lg {
+  min-height: 48px;
+}
+
+
+@media (max-width: 640px) {
+  .input-wrapper {
+    gap: var(--space-1);
+  }
+
+  .input {
+    min-height: 44px; /* mobile touch target */
+  }
+}
+
+@media (min-width: 1280px) {
+  .input-wrapper {
+    gap: var(--space-2);
+  }
+
+  .input {
+    max-width: 420px; /* avoid ultra-wide inputs */
+  }
+}
+
+

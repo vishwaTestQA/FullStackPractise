@@ -20,7 +20,7 @@ const buttonVariants = cva(styles.base,{
 })
 
 type ButtonProps = {
-  
+  //nothing here so we can simply use interface as well
 } & React.ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>
 
 export const Button = ({intent, size, ...props}: ButtonProps) => {
