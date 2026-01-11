@@ -31,7 +31,7 @@ const DataFetch = () => {
     },[])
 
     const calculateRowSpan = (colValue: string| number) => {
-        
+
     }
 
   return (
@@ -41,7 +41,7 @@ const DataFetch = () => {
                variant={'bordered'} stickyHeader={true} density={'compact'}/> */}
         <DataModel<Comments> columns={columns} data={data} testId={'table'}
                variant={'bordered'} stickyHeader={true} density={'compact'}
-               hoverable={true} calculateRowSpan={}/>
+               hoverable={true} calculateRowSpan={(val) => 10}/>
     </div>  
   )
 }

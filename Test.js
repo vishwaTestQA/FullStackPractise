@@ -274,3 +274,15 @@ for(let i = 0; i<missingNum.length; i++){
 // const sum = missingNum.reduce((acc, v) => acc+v, 0)
 
 // console.log(total - sum)
+
+
+const all = [1,2,3,-1,3,6,7,8,9,0]
+
+const ev = all.every(a => {
+    console.log(a)
+    if(a>0){
+        return a
+           
+    }
+ 
+})
