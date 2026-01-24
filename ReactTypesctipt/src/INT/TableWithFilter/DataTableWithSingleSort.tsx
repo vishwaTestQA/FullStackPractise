@@ -37,7 +37,7 @@ const DataTableWithSingleSort = <T extends Record<string, any>>({data, header}: 
 
     const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;    //name == headerName and value === searchvalue
-
+        
         setPendingAction("filter");
         startTransition(() => {
          setQuery(prev => ({...prev, [name]:value}))
@@ -57,13 +57,12 @@ const DataTableWithSingleSort = <T extends Record<string, any>>({data, header}: 
             ? {key, direction: prev.direction === 'asc' ? 'desc' : 'asc'}
             : {key, direction: 'asc'}
        })
-       })
-         
+       })    
     }
 
-    // const dataFiltered = useMemo(() => {
-    const dataFiltered = () => {
-        let res = data.filter((obj: T)=> {         //res is array of objects
+    const dataFiltered = useMemo(() => {
+    // const dataFiltered = () => {
+        let res = data?.filter((obj: T)=> {         //res is array of objects
            const keys =  Object.keys(deferredQuery);
            return keys.every(k => {
              if(deferredQuery[k] === "")return true;
@@ -89,12 +88,12 @@ const DataTableWithSingleSort = <T extends Record<string, any>>({data, header}: 
                      : String(bVal).localeCompare(String(aVal))
          })
         // return res.length === 0 ? data : res
-    // },[deferredQuery, sortkeys, data])
-    }
+    },[deferredQuery, sortkeys, data])
+    // }
 
-    useEffect(() => {
-        dataFiltered()
-    }, [data, query, sortkeys])
+    // useEffect(() => {
+    //     dataFiltered()
+    // }, [data, query, sortkeys])
 
     // console.log(filteredData)
 
@@ -119,10 +118,9 @@ const DataTableWithSingleSort = <T extends Record<string, any>>({data, header}: 
                     data.length === 0
                         ? <tr><td colSpan={header.length}>No data found</td></tr>
                         :  isPending ? <tr><td colSpan={header.length}>{pendingAction==="filter" ? "Filtering..." : "sorting..."}</td></tr>  
-                             : dataFiltered().map((dt) => ( 
+                             : dataFiltered.map((dt) => ( 
                            <tr>{header.map(hd => <td>{dt[hd.key]}</td>)}</tr>
                         ))
-
                 }
             </tbody>
         </table>

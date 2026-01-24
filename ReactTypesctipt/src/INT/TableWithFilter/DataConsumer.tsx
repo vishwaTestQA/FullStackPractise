@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import DataTable from './DataTable'
 import DataTableWithSingleSort from './DataTableWithSingleSort'
+import { axiosApi } from '../Axios/networkInterceptors'
 
 type Headers = {
     key:string,
@@ -26,15 +27,19 @@ const DataConsumer = () => {
         const fetchComments = async() => {
             try {
                 setLoading(true)
-                const resp:Response = await fetch("https://jsonplaceholder.typicode.com/comments", {signal: controller.signal})
+                // const resp:Response = await fetch("https://jsonplaceholder.typicode.com/commen", {signal: controller.signal})
                 
-                if(!resp.ok){
-                    throw new Error (`HTTP error: ${resp.status}`)
-                }
+                // if(!resp.ok){
+                //     throw new Error (`HTTP error: ${resp.status}`)
+                // }
                 
-                const data: CommentsData[] = await resp.json() 
+                // const data: CommentsData[] = await resp.json() 
+                //  setData(data)
 
-                setData(data)
+                const resp: CommentsData[] = await axiosApi.get("https://jsonplaceholder.typicode.com/comments", 
+                                                                         {signal: controller.signal})
+                setData(resp)
+
             } catch (error) {
                 if(error instanceof DOMException && error.name === "AbortError") return;
                 setError((error as Error).message)

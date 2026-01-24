@@ -1,0 +1,57 @@
+.reactLogo{
+   width: 100px;
+   height: 100px;
+   border: solid;
+   position: relative;
+}
+
+.round{
+    width: 90px;
+    height: 30px;
+    /* border: solid; */
+    border: 1px solid green;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.rnd{
+    width: 20px;
+    height: 20px;
+    border: 1px solid green;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.one{
+   /* transform: skew(-40deg, 40deg); */
+   /* transform: skew(-50deg, 50deg); */
+   transform: translate(-50%, -50%) rotate(60deg); 
+}
+
+.two{
+    /* transform: skewY(30deg); */
+    /* transform: skew(1deg, 1deg); */
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.three{
+    /* transform: skewY(-30deg); */
+    /* transform: skew(40deg, -40deg); */
+    /* transform: skew(50deg, -50deg); */
+    transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+.btn-normal{
+    padding: 8px 16px;
+}
+
+.inp-regular{
+    padding: 8px 10px 8px 6px
+}
+

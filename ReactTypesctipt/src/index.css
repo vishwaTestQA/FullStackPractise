@@ -72,3 +72,24 @@ button:focus-visible {
   margin:0;
   box-sizing: border-box;
 }
+/* 
+body{}  
+- overflow: hidden,   
+.app-activities-list add{} 
+ overflow-y: auto, 
+ height: calc(100vh - 200px) 
+ .footer{}- add 
+ 
+position:fixed bottom:80px                
+
+for tablet -
+ body{} - overflow: hidden,    
+ app-activities-list{} 
+ overflow-y: auto, 
+ height: calc(100vh - 220px) 
+ .footer{}-  position:fixed bottom:100px                
+ 
+ for mobile - body{} - overflow: hidden,   
+  app-activities-list{} overflow-y: auto, 
+  height: calc(100vh - 240px) 
+  .footer{}-  position:fixed bottom:120px */

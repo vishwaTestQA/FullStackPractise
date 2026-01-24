@@ -13,9 +13,9 @@ const FormsMainPage = () => {
     <div>
         <ToggleButton/>
          <NumberFormBuilder/>
-         <TimeFormBuilder/>
-         <DateFormBuilder/>
-         <SliderFormBuilder/>
+         {/* <TimeFormBuilder/> */}
+         {/* <DateFormBuilder/> */}
+         {/* <SliderFormBuilder/> */}
          {/* <Slider defaultValue={30} value={value} onChange={(e) => {
             // const value = e.target.value
             if(value){

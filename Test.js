@@ -286,3 +286,22 @@ const ev = all.every(a => {
     }
  
 })
+
+const upperFirstLetter = "javascrip java selenium reactjs"
+
+const upperRes = upperFirstLetter.split(' ').map(w => w.charAt(0).toUpperCase()).join(' ')
+const upperRes2 = upperFirstLetter.split(' ').map(w => w[0].toUpperCase()+w.slice(1)).join(' ')
+console.log("uperres", upperRes)
+console.log("uperres", upperRes2)
+
+console.log(upperFirstLetter.charAt(0))
+
+function print100(num){
+   if(num === 1)
+    return num
+
+   print100(num-1)
+   console.log(num)
+}
+
+print100(100)
