@@ -1,0 +1,50 @@
+{
+  "userId": "USR10234",
+  "serverTime": "2026-02-14T10:30:00Z",
+  "activities": [
+    {
+      "id": "ACT1001",
+      "title": "Clinical Trial Phase 1 Survey",
+      "description": "Initial patient screening questionnaire",
+      "startDateTime": "2026-02-14T09:00:00Z",
+      "endDateTime": "2026-02-14T12:00:00Z",
+      "status": "SCHEDULED",
+      "allowLateStart": false,
+      "maxDurationMinutes": 60,
+      "canStart": true
+    },
+    {
+      "id": "ACT1002",
+      "title": "Risk Profiling Assessment",
+      "description": "Investment risk appetite questionnaire",
+      "startDateTime": "2026-02-15T08:00:00Z",
+      "endDateTime": "2026-02-15T18:00:00Z",
+      "status": "UPCOMING",
+      "allowLateStart": false,
+      "maxDurationMinutes": 45,
+      "canStart": true
+    },
+    {
+      "id": "ACT1003",
+      "title": "Adverse Event Reporting",
+      "description": "Submit medical event details",
+      "startDateTime": "2026-02-13T08:00:00Z",
+      "endDateTime": "2026-02-13T17:00:00Z",
+      "status": "EXPIRED",
+      "allowLateStart": false,
+      "maxDurationMinutes": 30,
+      "canStart": false
+    },
+    {
+      "id": "ACT1004",
+      "title": "Portfolio Rebalancing Approval",
+      "description": "Approve updated asset allocation",
+      "startDateTime": "2026-02-14T06:39:00+05:30",
+      "endDateTime": "2026-02-14T19:22:00+05:30",
+      "status": "ACTIVE",
+      "allowLateStart": true,
+      "maxDurationMinutes": 20,
+      "canStart": true
+    }
+  ]
+}

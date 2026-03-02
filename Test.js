@@ -17,11 +17,10 @@ Array.prototype.add = function(){
    }
    return total;
 }
-const arr=[1,2,3,4,5]
+const arr = [1,2,3,4,5]
 
 let res = arr.add()
 console.log(res)
-
 
 Array.prototype.map = function(callback){
     let newArr=[]
@@ -37,7 +36,17 @@ const obj = [{id:1, isCheck: false}, {id:2, isCheck: false},{id:3, isCheck: fals
 const ret = obj.map(obj => obj.id == 1 ? {...obj, isCheck:true} : obj)
 console.log(ret)
 
+Array.prototype.filter1 = function(callback) {
+   const resArr = []
+   for(let i=0; i<this.length;i++){
+    let res =  callback(this[i], i, this);
+    res && resArr.push(this[i])
+   }
+   return resArr
+}
 
+const obj1 = [{id:1, name:"vishwa"}, {id:2, name:"akchaya"}]
+console.log("filter1", obj1.filter1(ob => ob.id === 1))
 
 
 Array.prototype.filter = function(callback){
@@ -54,32 +63,45 @@ const obj2 = [{id:1, isCheck: false}, {id:2, isCheck: true},{id:3, isCheck: fals
 const filt = obj2.filter(itm => itm.isCheck === false && itm)
 console.log(filt)
 
-Array.prototype.push = function(val){
-    let length = this.length;
-    this[length] = val;
+//===================push
+
+Array.prototype.pushC = function(val) {
+//     if(this.length){
+//      return  this[this.length-1] = val;
+//    } 
+// this[0] = val
+   this[this.length] = val
+   return this.length;
 }
 
-Array.prototype.pop = function(val){
-    let length = this.length;
-    let value = this[length-1]
-     
-    delete this[length-1]
+let arc=[]
+arc.pushC(1)
+arc.push(2)
+console.log("arc == ", arc)
 
-    return value
+// const forPop = []
+// console.log("pop", forPop.pop())   //undefined
+
+Array.prototype.popC = function(){
+    if(!this.length) return
+    const value = this[this.length-1]   //here we 
+    delete this[this.length-1];
+    this.length = this.length - 1
+    return value;
 }
 
 let empAArr=[]
 
-empAArr.push(1)
-empAArr.push(4)
+empAArr.pushC(1)
+empAArr.pushC(4)
 
-empAArr.push(2)
-empAArr.push(10)
+empAArr.pushC(2)
+empAArr.pushC(10)
 
 console.log(empAArr)
 
-empAArr.pop(10)
-console.log(empAArr)
+empAArr.popC()
+console.log("last empArr pop", empAArr)
 
 
 console.log("=================")
@@ -89,12 +111,14 @@ Array.prototype.cusShift = function(){
    for(let i = 0; i< this.length; i++){
     this[i] = this[i+1]
    }
+   delete this[this.length-1]
+   this.length = this.length-1
    return val
 }
 
 let shf = [1,2,3,4,5,6]
 console.log(shf.cusShift())
-console.log(shf)
+console.log("cusShift", shf)
 
 console.log(shf.cusShift())
 console.log(shf)
@@ -304,4 +328,4 @@ function print100(num){
    console.log(num)
 }
 
-print100(100)
+// print100(100)

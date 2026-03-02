@@ -1,0 +1,40 @@
+.lang{
+    height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+.li-lang:hover{
+    background-color: grey;
+}
+
+.highlighted{
+    background-color: grey;
+}
+
+.dropdown {
+  /* opacity: 0;
+  transform: translateY(-100px);
+  transition: all 0.2s ease; */
+}
+
+.dropdown.open {
+  /* opacity: 1;
+  transform: translateY(0);
+  position: absolute;
+  z-index: 101;
+  background-color: white; */
+}
+
+.drp-container{
+    position: relative;
+}
+
+.btn-langopts{
+    display: block;
+    height: 20px;
+}
+
+.drp-container{
+    position: relative;
+}

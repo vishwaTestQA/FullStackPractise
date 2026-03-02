@@ -1,0 +1,38 @@
+html{
+    box-sizing: border-box;
+    box-sizing: content-box;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+.drp{
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    border: 0.1px solid;
+    z-index: 200;
+}
+
+.ul-drp{
+    list-style: none;
+}
+
+.tooltip-container{
+    overflow-y: auto;
+    /* position: relative; */
+}
+
+.test{
+   position: absolute;
+   top:0;
+   bottom: 400px;
+   background-color: black;
+   color: white;
+}
+
+.testChild{
+
+}

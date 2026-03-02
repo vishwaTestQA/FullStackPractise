@@ -8,6 +8,14 @@ export default defineConfig({
    test: {                //error here so installed npm install -D vitest and updated the import
     environment: "jsdom",
     globals: true,
-    setupFiles: "./src/setupTests.ts",
+    setupFiles: ["src/setupTests.ts"],
+    reporters: ['default', 'junit'],
+     outputFile: {
+      junit: './reports/junit.xml'
+    },
+    coverage:{
+      provider: 'v8',
+      reporter: ['text', 'html', 'lcov']
+    }
   },
 })

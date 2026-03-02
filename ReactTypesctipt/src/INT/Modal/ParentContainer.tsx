@@ -3,9 +3,9 @@ import Modal from './Modal'
 import ChildInsideModal from './ChildInsideModal'
 
 
-type Props = {
+// type Props = {
 
-}
+// }
 
 const ParentContainer = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,6 +16,7 @@ const ParentContainer = () => {
   const handleClose = () => {
     setIsOpen(false)
   }
+  
   return (
     <div style={
          {width:"100%", 

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-type Props = {}
+type Props = {
+    
+}
 
 const FormSelectLocalStorage = () => {
     const hydrationFlag = useRef(false)

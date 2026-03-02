@@ -49,7 +49,9 @@ const DataTableWithSingleSort = <T extends Record<string, any>>({data, header}: 
     console.log("deferred",deferredQuery)
     
     const handleSortKey = (e:React.MouseEvent<HTMLButtonElement>) => {
-       const key = e.currentTarget.dataset.key as keyof T;
+    //    const key = e.currentTarget.dataset.key as keyof T;
+       const target = e.target as HTMLElement
+       const key = target.dataset.key as keyof T;
        setPendingAction("sort") 
        startTransition(() =>{
        setSortkeys((prev) => {
@@ -63,9 +65,9 @@ const DataTableWithSingleSort = <T extends Record<string, any>>({data, header}: 
     const dataFiltered = useMemo(() => {
     // const dataFiltered = () => {
         let res = data?.filter((obj: T)=> {         //res is array of objects
-           const keys =  Object.keys(deferredQuery);
+           const keys =  Object.keys(deferredQuery);        //here defferedQuery({title: "lan", "body":"msw"})
            return keys.every(k => {
-             if(deferredQuery[k] === "")return true;
+             if(deferredQuery[k] === "")return true; 
              return String(obj[k]).toLocaleLowerCase().includes(String(deferredQuery[k]).toLocaleLowerCase())
            })
         })

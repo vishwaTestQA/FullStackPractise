@@ -13,7 +13,8 @@ const Modal = ({children, isOpen, onClose}: Props) => {
 
     const handleKey = (e: React.KeyboardEvent<HTMLElement>) => e.key === "Escape" && onClose()
     window.addEventListener("keydown", handleKey)
-  })
+  },[])
+
   //backgroundColor:'white'
   return (
      ReactDOM.createPortal(
@@ -27,7 +28,7 @@ const Modal = ({children, isOpen, onClose}: Props) => {
               {children}
             </div>
          </div>,
-         document.getElementById("modal-root") as HTMLElement
+         document.querySelector("modal-root") as HTMLElement
      )
   )
 }

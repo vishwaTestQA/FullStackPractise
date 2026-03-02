@@ -1,0 +1,69 @@
+body{
+  width:100vw;
+  /* overflow-x: hidden; */
+  table-layout: fixed;
+}
+
+td{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+td:first-child{
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 1;
+}
+
+table{
+    width:100%;
+    
+}
+
+th,td{
+    padding: 0.75rem;
+    border:.5px solid black;
+    /* border-radius: 10px; */
+    text-align: left;
+}
+
+thead th{
+    background-color: aqua;
+}
+
+tbody tr{
+   
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td{
+     width: 5px;
+  cursor: col-resize;
+  /* resize: both; */
+}
+
+.custom{
+   border-collapse: collapse;
+}
+
+.tbl-button{
+    display: none;
+    height: 300px;
+    /* visibility: hidden; */
+}

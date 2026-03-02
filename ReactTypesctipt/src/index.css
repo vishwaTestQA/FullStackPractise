@@ -72,6 +72,10 @@ button:focus-visible {
   margin:0;
   box-sizing: border-box;
 }
+
+body{
+  width: 100vw;
+}
 /* 
 body{}  
 - overflow: hidden,   

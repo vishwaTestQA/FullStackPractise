@@ -68,10 +68,9 @@ const DropDownInt = <T,>({items, renderItem, onSelect, selectedItem, keyNavigati
   return (
     <div>
       {/*  */}
-    <div tabIndex={0} ref={triggerRef} className='dropdown' onClick={handleList} onKeyDown={handleTriggerKeyDown}>
+  <div tabIndex={0} ref={triggerRef} className='dropdown' onClick={handleList} onKeyDown={handleTriggerKeyDown}>
       {selectedItem || 'select'}
-    </div>
-
+  </div>
   {openList &&
     <div style={{width:"200px", height:"100px"}}> {/* if we give display:flex here then full dropdown box move */}
        <ul ref={listRef} tabIndex={0} role='listbox' style={{listStyleType:'none', boxShadow:"2px 3px 4px rgba(0,0,0,0.5)"}} onKeyDown={handleKeyDown} onClick={handleSelect}>
