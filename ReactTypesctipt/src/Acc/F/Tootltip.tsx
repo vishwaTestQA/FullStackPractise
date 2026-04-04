@@ -22,8 +22,7 @@ const Tootltip = () => {
             setDrp1(prev => !prev)
         }else{
             setDrp2(prev => !prev)
-        }
-        
+        }    
     }
 
     useLayoutEffect(() => {
